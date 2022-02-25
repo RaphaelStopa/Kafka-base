@@ -1,0 +1,15 @@
+api:
+  zipcode:
+    username: admin
+    password: admin123
+
+spring:
+  kafka:
+    producer:
+      bootstrap-servers: localhost:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+
+topic:
+  address-client: topic_address_client
+  group-id: group_id
