@@ -1,14 +1,17 @@
 package com.example.client.model;
 
+
 import lombok.Data;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
+
+import javax.persistence.*;
 
 @Data
-@Document
+@Entity
+@Table(name = "address")
 public class Address {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
     private String cep;
     private String logradouro;
