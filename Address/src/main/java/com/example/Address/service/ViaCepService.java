@@ -9,5 +9,5 @@ import org.springframework.web.bind.annotation.PathVariable;
 public interface ViaCepService {
 
     @GetMapping("/{cep}/json/")
-    AddressResponse obterCep(@PathVariable("cep") String cep);
+    AddressResponse getCep(@PathVariable("cep") String cep);
 }

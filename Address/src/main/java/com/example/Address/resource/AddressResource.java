@@ -24,17 +24,17 @@ public class AddressResource {
     private AddressService addressService;
 
     @GetMapping("/{cep}")
-    public ResponseEntity<AddressResponse> obterCep(@PathVariable("cep") String cep) {
-        AddressResponse addressResponse = viaCepService.obterCep(cep);
+    public ResponseEntity<AddressResponse> getCep(@PathVariable("cep") String cep) {
+        AddressResponse addressResponse = viaCepService.getCep(cep);
         return ResponseEntity.ok(addressResponse);
     }
 
     @PostMapping
-    public ResponseEntity<AddressResponse> enviarEndereco(@RequestBody AddressJson addressJson) throws JsonProcessingException {
+    public ResponseEntity<AddressResponse> sendAddress(@RequestBody AddressJson addressJson) throws JsonProcessingException {
 
         log.info("## Dados envidos pelo cliente: {}", addressJson);
 
-        AddressResponse addressResponse = viaCepService.obterCep(addressJson.getCep());
+        AddressResponse addressResponse = viaCepService.getCep(addressJson.getCep());
 
         addressResponse.setComplemento(addressJson.getComplemento());
         addressResponse.setNumero(addressJson.getNumero());

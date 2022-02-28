@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AddressResponse {
 
-    // Colquei um pt-br pq vou usar o via CEP
+    //I put a pt-br, since that's how it comes back from ViaCEP
 
     private String cep;
     private String logradouro;
